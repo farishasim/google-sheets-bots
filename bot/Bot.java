@@ -7,11 +7,13 @@ public class Bot extends Thread {
     protected int ID;
     protected Transmitter transmitter;
     protected String message;
+    protected Random random;
 
     public Bot(int ID, Transmitter transmitter) {
         this.ID = ID;
         this.transmitter = transmitter;
         message = "Default Bot";
+        random = new Random(System.currentTimeMillis() * ID);
     }
 
     public String getMessage() {
@@ -26,7 +28,7 @@ public class Bot extends Thread {
     public void run() {
         while (true) {
             this.transmitter.transmit(this);
-            int randint = (new Random(System.currentTimeMillis())).nextInt(10);
+            int randint = random.nextInt(10);
             try {
                 sleep(randint*1000);
                 newMessage();
@@ -41,9 +43,8 @@ public class Bot extends Thread {
         int upperBound = 122; //'z'
         int strLength = 8;
         StringBuilder buffer = new StringBuilder(strLength);
-        Random random = new Random(System.currentTimeMillis());
         for (int i = 0; i < strLength; i++) {
-            char randChar = (char) (lowerBound + (random.nextInt() * (upperBound - lowerBound + 1)));
+            char randChar = (char) (lowerBound + (random.nextInt(upperBound-lowerBound)));
             buffer.append(randChar);
         }
         message = buffer.toString();
