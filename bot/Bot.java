@@ -29,6 +29,7 @@ public class Bot extends Thread {
             int randint = (new Random(System.currentTimeMillis())).nextInt(10);
             try {
                 sleep(randint*1000);
+                newMessage();
             } catch (InterruptedException e) {
                 this.transmitter.transmit(this);
             }
@@ -42,7 +43,9 @@ public class Bot extends Thread {
         StringBuilder buffer = new StringBuilder(strLength);
         Random random = new Random(System.currentTimeMillis());
         for (int i = 0; i < strLength; i++) {
-            char randChar = (char) (random.);
+            char randChar = (char) (lowerBound + (random.nextInt() * (upperBound - lowerBound + 1)));
+            buffer.append(randChar);
         }
+        message = buffer.toString();
     }
 }
