@@ -34,4 +34,15 @@ public class Bot extends Thread {
             }
         }
     }
+
+    private void newMessage() {
+        int lowerBound = 97; // 'a'
+        int upperBound = 122; //'z'
+        int strLength = 8;
+        StringBuilder buffer = new StringBuilder(strLength);
+        Random random = new Random(System.currentTimeMillis());
+        for (int i = 0; i < strLength; i++) {
+            char randChar = (char) (random.);
+        }
+    }
 }
