@@ -27,7 +27,7 @@ public class Bot extends Thread {
     @Override
     public void run() {
         while (true) {
-            this.transmitter.transmit(this);
+            boolean submit = this.transmitter.transmit(this);
             int randint = random.nextInt(10);
             try {
                 sleep(randint*1000);
@@ -38,7 +38,7 @@ public class Bot extends Thread {
         }
     }
 
-    private void newMessage() {
+    protected void newMessage() {
         int lowerBound = 97; // 'a'
         int upperBound = 122; //'z'
         int strLength = 8;
