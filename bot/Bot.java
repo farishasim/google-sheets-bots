@@ -12,8 +12,8 @@ public class Bot extends Thread {
     public Bot(int ID, Transmitter transmitter) {
         this.ID = ID;
         this.transmitter = transmitter;
-        message = "Default Bot";
         random = new Random(System.currentTimeMillis() * ID);
+        newMessage();
     }
 
     public String getMessage() {
