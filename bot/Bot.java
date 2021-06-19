@@ -27,7 +27,7 @@ public class Bot extends Thread {
     @Override
     public void run() {
         while (true) {
-            boolean submit = this.transmitter.transmit(this);
+            this.transmitter.transmit(this);
             int randint = random.nextInt(10);
             try {
                 sleep(randint*1000);
