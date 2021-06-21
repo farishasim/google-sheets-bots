@@ -8,11 +8,13 @@ import bot.Bot2;
 import bot.Bot3;
 import transmitter.Transmitter;
 import writer.ConsoleWriter;
+import writer.SheetWriter;
 import writer.Writer;
 
 public class Main {
     public static void main(String[] args) {
-        Writer myWriter = new ConsoleWriter();
+        // Writer myWriter = new ConsoleWriter();
+        Writer myWriter = new SheetWriter();
         Transmitter transmitter = new Transmitter(myWriter);
 
         List<Bot> bots = new ArrayList<>(4);
