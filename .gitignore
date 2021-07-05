@@ -4,5 +4,6 @@ build
 bin
 .*
 tokens
+sid
 
 src/main/resources/credentials.json

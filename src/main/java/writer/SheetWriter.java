@@ -32,7 +32,7 @@ public class SheetWriter implements Writer{
 
     private static final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS);
     private static final String CREDENTIALS_FILE_PATH = "/credentials.json";
-    private static final String SPREADSHEET_ID = "1h0VUrHma60uwnYLbO2i2WILt1IibXDa7hIU_ghOpaIw";
+    private static final String SPREADSHEET_ID = ""; // <-- USE YOUR SPREADSHEET ID HERE
 
     private static int counter;
     private static String botID;
